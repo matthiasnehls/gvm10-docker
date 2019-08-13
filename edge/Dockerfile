@@ -108,7 +108,12 @@ COPY conf/redis.config /etc/redis/redis.conf
 
 RUN service redis-server restart
 
+#Change user to anybody else, because nvt-sync can`t be done by root
+USER greenbone-nvt-sync
+
 RUN greenbone-nvt-sync 
+
+USER root
 
 RUN cd ${SRC_PATH}/gvmd ;\
     mkdir build ;\
