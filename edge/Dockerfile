@@ -1,4 +1,4 @@
-FROM ubuntu:18.04.2
+FROM ubuntu:18.04
  
 COPY conf/openvassd.conf /usr/local/etc/openvas/openvassd.conf
 COPY script/entrypoint.sh /entrypoint.sh
