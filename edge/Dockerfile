@@ -96,7 +96,9 @@ RUN  cd ${SRC_PATH}/openvas-smb  ;\
     cd ${SRC_PATH}
     
 #this is need because root is not allowed to run greenbone-nvt-sync 
-RUN sed -i "s/-eq "0"/-eq "666"/" ${SRC_PATH}/openvas-scanner/tools/greenbone-nvt-sync.in
+#RUN sed -i "s/-eq "0"/-eq "666"/" ${SRC_PATH}/openvas-scanner/tools/greenbone-nvt-sync.in
+#RUN sed -i "s/eq "0"/eq "99999"/" ${SRC_PATH}/openvas-scanner/tools/greenbone-nvt-sync.in
+RUN sed 's/-eq \"0\"/-eq \"9999\"/g' ${SRC_PATH}/openvas-scanner/tools/greenbone-nvt-sync.in
 
 RUN  cd ${SRC_PATH}/openvas-scanner ;\
     mkdir build ;\
