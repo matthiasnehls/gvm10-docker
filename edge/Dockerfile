@@ -83,7 +83,7 @@ RUN  cd ${SRC_PATH}/gvm-libs ;\
     cd build ;\
     cmake .. ;\
     make ;\
-    make doc-full ;\
+    #make doc-full ;\
     make install ;\
     cd ${SRC_PATH}
 
@@ -100,7 +100,7 @@ RUN  cd ${SRC_PATH}/openvas-scanner ;\
     cd build/ ;\
     cmake .. ;\
     make ;\
-    make doc-full ;\
+    #make doc-full ;\
     make install ;\
     cd ${SRC_PATH}
 
@@ -109,7 +109,7 @@ COPY conf/redis.config /etc/redis/redis.conf
 RUN service redis-server restart
 
 #Change user to anybody else, because nvt-sync can`t be done by root
-USER greenbone-nvt-sync
+USER nobody
 
 RUN greenbone-nvt-sync 
 
@@ -120,7 +120,7 @@ RUN cd ${SRC_PATH}/gvmd ;\
     cd build/ ;\
     cmake .. ;\
     make ;\
-    make doc-full ;\
+    #make doc-full ;\
     make install ;\
     cd ${SRC_PATH}
 
@@ -131,7 +131,7 @@ RUN cd ${SRC_PATH}/gsa ;\
     cd build/ ;\
     cmake .. ;\
     make ;\
-    make doc-full ;\
+    #make doc-full ;\
     make install ;\
     cd ${SRC_PATH}
 
