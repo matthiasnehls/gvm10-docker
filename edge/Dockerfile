@@ -115,7 +115,7 @@ COPY conf/redis.config /etc/redis/redis.conf
 RUN service redis-server restart
 
 USER cyberscan
-RUN greenbone-nvt-sync 
+RUN sudo greenbone-nvt-sync 
 USER root
 
 RUN cd ${SRC_PATH}/gvmd ;\
