@@ -114,7 +114,7 @@ COPY conf/redis.config /etc/redis/redis.conf
 RUN service redis-server restart
 
 #USER cyberscan
-RUN sed "s/-eq \"0\"/-eq \"9999\"/g" greenbone-nvt-sync
+RUN sed "s/-eq \"0\"/-eq \"9999\"/g" /usr/sbin/greenbone-nvt-sync
 RUN greenbone-nvt-sync 
 #USER root
 
