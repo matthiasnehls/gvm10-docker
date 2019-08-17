@@ -20,11 +20,11 @@ while  [ "${X}" != "PONG" ]; do
 done
 
 # Check if ssl certs are in place (it's rather late and I will fix this more elegant later[tm])
-echo "===> Waiting to get certs ready"
-until /usr/local/bin/gvm-manage-certs -V -q
-do
-  /usr/local/bin/gvm-manage-certs -af
-done
+#echo "===> Waiting to get certs ready"
+#until /usr/local/bin/gvm-manage-certs -V -q
+#do
+#  /usr/local/bin/gvm-manage-certs -af
+#done
 
 # Check if admin exists, if not create admin
 if $(/usr/local/sbin/gvmd --get-users | grep -q 'admin') ; then
